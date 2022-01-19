@@ -10,10 +10,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
-/**
- * @Route("/livre")
- */
+// /**
+//  * @Route("/livre")
+//  */
 class LivreController extends AbstractController
 {
     /**
@@ -27,7 +28,8 @@ class LivreController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="livre_new", methods={"GET", "POST"})
+     * @Route("/livre/new", name="livre_new", methods={"GET", "POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -49,7 +51,7 @@ class LivreController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="livre_show", methods={"GET"})
+     * @Route("/livre/{id}", name="livre_show", methods={"GET"})
      */
     public function show(Livre $livre): Response
     {
@@ -59,7 +61,7 @@ class LivreController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="livre_edit", methods={"GET", "POST"})
+     * @Route("/livre/{id}/edit", name="livre_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Livre $livre, EntityManagerInterface $entityManager): Response
     {
@@ -79,7 +81,7 @@ class LivreController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="livre_delete", methods={"POST"})
+     * @Route("/livre/{id}", name="livre_delete", methods={"POST"})
      */
     public function delete(Request $request, Livre $livre, EntityManagerInterface $entityManager): Response
     {

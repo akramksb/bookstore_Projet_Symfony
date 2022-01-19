@@ -28,7 +28,9 @@
                 <td>{{ livre.note }}</td>
                 <td>
                     <a href="{{ path('livre_show', {'id': livre.id}) }}">show</a>
-                    <a href="{{ path('livre_edit', {'id': livre.id}) }}">edit</a>
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <a href="{{ path('livre_edit', {'id': livre.id}) }}">edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}

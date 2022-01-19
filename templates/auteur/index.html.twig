@@ -26,7 +26,9 @@
                 <td>{{ auteur.nationalite }}</td>
                 <td>
                     <a href="{{ path('auteur_show', {'id': auteur.id}) }}">show</a>
-                    <a href="{{ path('auteur_edit', {'id': auteur.id}) }}">edit</a>
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <a href="{{ path('auteur_edit', {'id': auteur.id}) }}">edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
