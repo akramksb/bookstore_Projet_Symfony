@@ -5,6 +5,9 @@
 {% block body %}
     <h1>Livre index</h1>
 
+
+    <a class="btn btn-primary" role="button" href="{{ path('livre_new') }}">Create new</a>
+
     <table class="table">
         <thead>
             <tr>
@@ -41,5 +44,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('livre_new') }}">Create new</a>
 {% endblock %}

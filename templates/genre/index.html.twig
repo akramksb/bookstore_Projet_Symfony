@@ -5,6 +5,8 @@
 {% block body %}
     <h1>Genre index</h1>
 
+    <a class="btn btn-primary" role="button" href="{{ path('genre_new') }}">Create new</a>
+
     <table class="table">
         <thead>
             <tr>
@@ -33,5 +35,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('genre_new') }}">Create new</a>
 {% endblock %}

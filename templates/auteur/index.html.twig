@@ -5,6 +5,8 @@
 {% block body %}
     <h1>Auteur index</h1>
 
+    <a class="btn btn-primary" role="button" href="{{ path('auteur_new') }}">Create new</a>
+
     <table class="table">
         <thead>
             <tr>
@@ -39,5 +41,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('auteur_new') }}">Create new</a>
 {% endblock %}
